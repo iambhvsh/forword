@@ -36,11 +36,8 @@ const App = () => {
     fetchPopularWords();
   }, []);
 
-  // Call setupIonicReact to set mode to 'ios'
   useEffect(() => {
-    setupIonicReact({
-      mode: 'ios',
-    });
+    setupIonicReact(); // Call setupIonicReact to configure Ionic React settings
   }, []);
 
   return (
