@@ -1,28 +1,32 @@
-// WordStore.js
-import { Store } from 'pullstate';
+import { Store } from "pullstate";
 
+// Load favourites from local storage
 const loadFavouritesFromLocalStorage = () => {
   const favourites = localStorage.getItem('favourites');
   return favourites ? JSON.parse(favourites) : [];
 };
 
-export const WordStore = new Store({
+const WordStore = new Store({
   favourites: loadFavouritesFromLocalStorage(),
+  popularWords: [],
+  searchCount: 0
 });
 
-export const addFavourite = (word) => {
+export default WordStore;
+
+export const addToFavourites = (passedWord) => {
+  const currentFavourites = WordStore.getRawState().favourites;
+  const added = !currentFavourites.includes(passedWord);
+
   WordStore.update(s => {
-    s.favourites.push(word);
+    if (currentFavourites.includes(passedWord)) {
+      s.favourites = currentFavourites.filter(word => word !== passedWord);
+    } else {
+      s.favourites = [...s.favourites, passedWord];
+    }
+    // Update local storage
     localStorage.setItem('favourites', JSON.stringify(s.favourites));
   });
-};
 
-export const removeFavourite = (word) => {
-  WordStore.update(s => {
-    s.favourites = s.favourites.filter(fav => fav !== word);
-    localStorage.setItem('favourites', JSON.stringify(s.favourites));
-  });
+  return added;
 };
-
-// Selectors.js
-export const getFavourites = s => s.favourites;
