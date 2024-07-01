@@ -15,13 +15,13 @@ const Tab1 = () => {
     <IonPage ref={ pageRef }>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Dashboard</IonTitle>
+          <IonTitle>Home</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Dashboard</IonTitle>
+            <IonTitle size="large">Home</IonTitle>
           </IonToolbar>
         </IonHeader>
         
@@ -29,10 +29,10 @@ const Tab1 = () => {
           <IonRow className={ `animate__animated animate__faster animate__fadeIn` }>
             <IonCol size="12">
               <IonCard>
-                <IonCardContent>
-                  <IonIcon icon={ bookOutline } color="primary" style={{ fontSize: "2rem" }} />
-                  <IonCardTitle>Ionic Dictionary App</IonCardTitle>
-                  <p>Based on the English language</p>
+                <IonCardContent style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+  <IonIcon icon={bookOutline} color="primary" style={{ fontSize: '2rem', marginBottom: '0.5rem' }} />
+  <IonCardTitle style={{ marginBottom: '0.5rem' }}>ForWord</IonCardTitle>
+  <p style={{ marginBottom: 0 }}>A dictionary based on English language.</p>
                 </IonCardContent>
               </IonCard>
             </IonCol>
@@ -43,8 +43,13 @@ const Tab1 = () => {
               <IonCard>
                 <IonCardContent>
                   <IonCardTitle>Did you know?</IonCardTitle>
-                  <p>There are 171, 146 words in the English language!</p>
-                  <IonButton expand="block" className="ion-margin-top" routerLink="/search">Search now &rarr;</IonButton>
+                  <p>There are around Million words in the English language!</p>
+                  <IonButton expand="block" className="ion-margin-top" routerLink="/search" style={{ display: 'flex', alignItems: 'center' }}>
+  Search now
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style={{ marginLeft: '5px' }}>
+    <path d="M10 6l6 6-6 6"/>
+  </svg>
+</IonButton>
                 </IonCardContent>
               </IonCard>
             </IonCol>
