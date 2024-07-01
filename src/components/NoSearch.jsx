@@ -1,7 +1,8 @@
 import { IonCol, IonLabel, IonRow } from "@ionic/react";
 
 const centerStyle = {
-  minHeight: '100vh',
+  textAlign: 'center',
+  marginTop: '50%',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
