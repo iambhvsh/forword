@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { useStoreState } from 'pullstate';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { NoFavourites } from '../components/NoFavourites';
 import { WordCard } from '../components/WordCard';
 import { WordStore } from '../store';
@@ -10,7 +10,6 @@ const Tab3 = () => {
 
   const pageRef = useRef();
   const favourites = useStoreState(WordStore, getFavourites);
-  const [ animatedClass, setAnimatedClass ] = useState("animate__slideInLeft");
 
   return (
     <IonPage ref={ pageRef }>
@@ -27,12 +26,10 @@ const Tab3 = () => {
         </IonHeader>
         
         { favourites.map((favourite, index) => {
-
-          return <WordCard key={ index } word={ favourite } animatedClass={ animatedClass } pageRef={ pageRef } />;
+          return <WordCard key={ index } word={ favourite } pageRef={ pageRef } />;
         })}
 
         { favourites.length < 1 && 
-            
           <NoFavourites />
         }
       </IonContent>
