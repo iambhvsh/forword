@@ -8,11 +8,9 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { heart, search, statsChart } from 'ionicons/icons'; // Only import the used icons
-
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import { heart, search, statsChart } from 'ionicons/icons';
+import { useEffect } from 'react';
+import { fetchPopularWords, setupIonicReact } from './utils'; // Import setupIonicReact from utils
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -32,13 +30,17 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import { useEffect } from 'react';
-import { fetchPopularWords } from './utils';
 
 const App = () => {
-
   useEffect(() => {
     fetchPopularWords();
+  }, []);
+
+  // Call setupIonicReact to set mode to 'ios'
+  useEffect(() => {
+    setupIonicReact({
+      mode: 'ios',
+    });
   }, []);
 
   return (
@@ -61,13 +63,13 @@ const App = () => {
           </IonRouterOutlet>
           <IonTabBar slot="bottom">
             <IonTabButton tab="dashboard" href="/dashboard">
-              <IonIcon icon={ statsChart } />
+              <IonIcon icon={statsChart} />
             </IonTabButton>
             <IonTabButton tab="search" href="/search">
-              <IonIcon icon={ search } />
+              <IonIcon icon={search} />
             </IonTabButton>
             <IonTabButton tab="favourites" href="/favourites">
-              <IonIcon icon={ heart } />
+              <IonIcon icon={heart} />
             </IonTabButton>
           </IonTabBar>
         </IonTabs>
