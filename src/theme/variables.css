@@ -75,12 +75,12 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-light-shade: #e0e0e0;
   --ion-color-light-tint: #ffffff;
 
-  --ion-background-color: #1e1b27 !important;
-  --ion-tab-bar-color-selected: #953cd0;
-  --ion-tab-bar-color: #412f6e;
+  --ion-background-color: #000000 !important;
+  --ion-tab-bar-color-selected: #007aff;
+  --ion-tab-bar-color: #ffffff;
   --ion-text-color: white;
-  --ion-tab-bar-background: #191620;
-  --ion-toolbar-background: #191620 !important;
+  --ion-tab-bar-background: #000000;
+  --ion-toolbar-background: #000000 !important;
   --ion-item-background: #000000 !important;
 
   --ion-card-background: #272333 !important;
