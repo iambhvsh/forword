@@ -1,17 +1,13 @@
+import React from 'react';
 import { IonCol, IonLabel, IonRow } from "@ionic/react";
 
-const centerStyle = {
-  textAlign: 'center',
-  width: 'full',
-  marginTop: '50%',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-};
+export const NoSearch = () => {
+  const styles = {
+    marginTop: '50%',
+  };
 
-export const NoSearch = () => (
-  <div style={centerStyle}>
-    <IonRow>
+  return (
+    <IonRow style={styles} className="ion-text-center ion-justify-content-center">
       <IonCol size="10">
         <IonLabel>
           <h2>Search for a word in the English language</h2>
@@ -19,5 +15,5 @@ export const NoSearch = () => (
         </IonLabel>
       </IonCol>
     </IonRow>
-  </div>
-);
+  );
+};
