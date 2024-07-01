@@ -1,13 +1,3 @@
-import { setupIonicReact as ionicSetup } from '@ionic/react'; // Import setupIonicReact from @ionic/react
-
-export const setupIonicReact = () => {
-  ionicSetup({
-    mode: 'ios', // Set the default mode to iOS
-    rippleEffect: false, // Disable ripple effects globally
-    // Add more global configuration options as needed
-  });
-}
-
 export const searchWord = async (word, returnOne = true) => {
   const API_URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
   const response = await fetch(`${API_URL}${word.toLowerCase()}`);
