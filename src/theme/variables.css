@@ -4,7 +4,7 @@ http://ionicframework.com/docs/theming/ */
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #953cd0;
+  --ion-color-primary: #007aff;
   --ion-color-primary-rgb: 149,60,208;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255,255,255;
@@ -83,7 +83,7 @@ http://ionicframework.com/docs/theming/ */
   --ion-toolbar-background: #000000 !important;
   --ion-item-background: #000000 !important;
 
-  --ion-card-background: #272333 !important;
+  --ion-card-background: #292828 !important;
   --ion-modal-background: #272333 !important;
 }
 
