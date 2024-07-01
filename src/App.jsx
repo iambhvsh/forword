@@ -1,5 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
-import { setupIonicReact } from '@ionic/react';
+import {setupConfig} from '@ionic/react'
 import {
   IonApp,
   IonIcon,
@@ -40,11 +40,8 @@ const App = () => {
     fetchPopularWords();
   }, []);
 
-  setupIonicReact({
-  rippleEffect: false,
-  mode: 'md',
-});
-
+  setupConfig({mode: 'ios'})
+  
   return (
     <IonApp>
       <IonReactRouter>
