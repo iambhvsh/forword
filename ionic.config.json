@@ -1,4 +1,7 @@
 {
-  "name": "ionic-dictionary-app",
-  "type": "react"
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "platform": "ios"
 }
