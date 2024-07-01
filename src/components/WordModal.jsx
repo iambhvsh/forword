@@ -1,4 +1,4 @@
-import { IonBadge, IonButton, IonButtons, IonCard, IonCardContent, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonNote, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBadge, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonNote, IonPage, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import { heart, heartOutline, play } from 'ionicons/icons';
 import { useStoreState } from 'pullstate';
 import { WordStore } from '../store';
@@ -43,13 +43,11 @@ const WordModal = ({ dismiss, word }) => {
                 <IonCardContent>
                   <IonCardTitle>{ word.word }</IonCardTitle>
                   <div className="ion-padding-bottom ion-padding-top">
-                    { word.meanings && word.meanings.map((meaning, index) => {
-                      return (
-                        <span key={ `meaning_${ index }` }>
-                          <IonBadge key={ index } color="primary">{ meaning.partOfSpeech }</IonBadge>&nbsp;
-                        </span>
-                      );
-                    })}
+                    { word.meanings && word.meanings.map((meaning, index) => (
+                      <span key={ `meaning_${ index }` }>
+                        <IonBadge key={ index } color="primary">{ meaning.partOfSpeech }</IonBadge>&nbsp;
+                      </span>
+                    ))}
                   </div>
                   <IonNote color="white">{ word.origin }</IonNote>
                 </IonCardContent>
@@ -81,9 +79,9 @@ const WordModal = ({ dismiss, word }) => {
               <WordCardHeading text="Meanings" />
               <IonCard>
                 <IonCardContent>
-                  { word.meanings && word.meanings.map((meaning, index) => {
-                    return <WordMeaning key={ index } index={ index } meaning={ meaning } />;
-                  })}
+                  { word.meanings && word.meanings.map((meaning, index) => (
+                    <WordMeaning key={ index } index={ index } meaning={ meaning } />
+                  ))}
                 </IonCardContent>
               </IonCard>
             </IonCol>
