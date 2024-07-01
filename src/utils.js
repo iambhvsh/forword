@@ -1,7 +1,7 @@
-import { setupIonicReact } from '@ionic/react'; // Import setupIonicReact from @ionic/react
+import { setupIonicReact as ionicSetup } from '@ionic/react'; // Import setupIonicReact from @ionic/react
 
 export const setupIonicReact = () => {
-  setupIonicReact({
+  ionicSetup({
     mode: 'ios', // Set the default mode to iOS
     rippleEffect: false, // Disable ripple effects globally
     // Add more global configuration options as needed
