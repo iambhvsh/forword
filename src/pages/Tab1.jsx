@@ -1,6 +1,5 @@
 import { IonButton, IonCard, IonCardContent, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import { chevronForward } from "ionicons/icons";
-import { bookOutline, heart, search } from 'ionicons/icons';
+import { bookOutline, heart, search, chevronForward, bulb } from 'ionicons/icons';
 import { useStoreState } from 'pullstate';
 import { useRef } from 'react';
 import { WordStore } from '../store';
@@ -43,6 +42,7 @@ const Tab1 = () => {
             <IonCol size="12">
               <IonCard>
                 <IonCardContent style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+                  <IonIcon icon={bulb} color="primary" style={{ fontSize: '2rem', marginBottom: '0.5rem' }} />
                   <IonCardTitle style={{ marginBottom: '0.5rem' }}>Did you know?</IonCardTitle>
                   <p>There are around Million words in the English language!</p>
                   <IonButton expand="block" className="ion-margin-top" routerLink="/search" style={{ display: 'flex', alignItems: 'center' }}>Search now <IonIcon icon={ chevronForward } />
