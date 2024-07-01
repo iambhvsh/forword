@@ -41,8 +41,8 @@ const Tab1 = () => {
           <IonRow className={ `animate__animated animate__faster animate__fadeIn` }>
             <IonCol size="12">
               <IonCard>
-                <IonCardContent>
-                  <IonCardTitle>Did you know?</IonCardTitle>
+                <IonCardContent style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+                  <IonCardTitle style={{ marginBottom: '0.5rem' }}>Did you know?</IonCardTitle>
                   <p>There are around Million words in the English language!</p>
                   <IonButton expand="block" className="ion-margin-top" routerLink="/search" style={{ display: 'flex', alignItems: 'center' }}>
   Search now
