@@ -57,7 +57,7 @@ const App = () => {
               <Tab3 />
             </Route>
             <Route exact path="/">
-              <Redirect to="/" />
+              <Redirect to="/home" />
             </Route>
           </IonRouterOutlet>
           <IonTabBar slot="bottom">
