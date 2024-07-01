@@ -6,25 +6,25 @@ import { WordStore } from '../store';
 import { searchWord } from '../utils';
 
 const Tab2 = () => {
-
   const pageRef = useRef();
-  const [ searchTerm, setSearchTerm ] = useState("");
-  const [ searchResult, setSearchResult ] = useState(false);
-  const [ animatedClass, setAnimatedClass ] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResult, setSearchResult] = useState(null);
+  const [animatedClass, setAnimatedClass] = useState("");
 
   const performSearch = async () => {
-
     setAnimatedClass("animate__slideOutRight");
-    const result = searchTerm !== "" ? await searchWord(searchTerm) : undefined;
+    const result = searchTerm ? await searchWord(searchTerm) : null;
 
-    setTimeout(() => setSearchResult(result === undefined ? "none" : result), 250);
-    setTimeout(() => setAnimatedClass("animate__slideInLeft"), 250);
+    setTimeout(() => {
+      setSearchResult(result || "none");
+      setAnimatedClass("animate__slideInLeft");
+    }, 250);
 
     WordStore.update(s => { s.searchCount++ });
   }
 
   return (
-    <IonPage ref={ pageRef }>
+    <IonPage ref={pageRef}>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Search</IonTitle>
@@ -40,25 +40,26 @@ const Tab2 = () => {
         <IonGrid>
           <IonRow className="ion-align-items-center">
             <IonCol size="9">
-              <IonSearchbar animated value={ searchTerm } onIonChange={ e => setSearchTerm(e.target.value) } />
+              <IonSearchbar
+                animated
+                value={searchTerm}
+                onIonChange={e => setSearchTerm(e.detail.value)}
+              />
             </IonCol>
-
             <IonCol size="3">
-              <IonButton color="primary" onClick={ performSearch }>Search</IonButton>
+              <IonButton color="primary" expand="block" onClick={performSearch}>Search</IonButton>
             </IonCol>
           </IonRow>
 
-          { (searchResult && searchResult !== "none") && 
-            
-            <WordCard word={ searchResult } animatedClass={ animatedClass } pageRef={ pageRef } /> 
-          }
+          {searchResult !== null && (
+            searchResult === "none" ? (
+              <NoResultsWordCard animatedClass={animatedClass} />
+            ) : (
+              <WordCard word={searchResult} animatedClass={animatedClass} pageRef={pageRef} />
+            )
+          )}
 
-          { (searchResult && searchResult === "none") && 
-            
-            <NoResultsWordCard word={ searchResult } animatedClass={ animatedClass } /> 
-          }
-
-          { !searchResult && <NoSearch /> }
+          {!searchResult && <NoSearch />}
         </IonGrid>
       </IonContent>
     </IonPage>
