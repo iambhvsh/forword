@@ -1,4 +1,5 @@
 import { IonButton, IonCard, IonCardContent, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { chevronForward } from "ionicons/icons";
 import { bookOutline, heart, search } from 'ionicons/icons';
 import { useStoreState } from 'pullstate';
 import { useRef } from 'react';
@@ -44,12 +45,8 @@ const Tab1 = () => {
                 <IonCardContent style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
                   <IonCardTitle style={{ marginBottom: '0.5rem' }}>Did you know?</IonCardTitle>
                   <p>There are around Million words in the English language!</p>
-                  <IonButton expand="block" className="ion-margin-top" routerLink="/search" style={{ display: 'flex', alignItems: 'center' }}>
-  Search now
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style={{ marginLeft: '5px' }}>
-    <path d="M10 6l6 6-6 6"/>
-  </svg>
-</IonButton>
+                  <IonButton expand="block" className="ion-margin-top" routerLink="/search" style={{ display: 'flex', alignItems: 'center' }}>Search now <IonIcon icon={ chevronForward } />
+                  </IonButton>
                 </IonCardContent>
               </IonCard>
             </IonCol>
