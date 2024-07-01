@@ -1,6 +1,6 @@
 <h1 align="center" id="title">ForWord</h1>
 
-<p id="description">ForWord is a dictionary application designed to provide comprehensive definitions and phonetic transcriptions for millions of words in the English language.</p>
+<p id="description">ForWord is a dictionary application designed to provide comprehensive definitions and phonetic transcriptions for millions of words in the English language. ForWord is created in React and Ionic Framework.</p>
 
 <p align="center">
    <img src="https://img.shields.io/github/forks/iambhvsh/forword?style=flat" alt="shields">
