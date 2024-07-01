@@ -1,4 +1,5 @@
-import { IonBadge, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonNote, IonPage, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import React from 'react';
+import { IonBadge, IonButton, IonButtons, IonCard, IonCardContent, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonNote, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import { heart, heartOutline, play } from 'ionicons/icons';
 import { useStoreState } from 'pullstate';
 import { WordStore } from '../store';
