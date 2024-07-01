@@ -2,7 +2,12 @@
 
 <p id="description">ForWord is a dictionary application designed to provide comprehensive definitions and phonetic transcriptions for millions of words in the English language.</p>
 
-<p align="center"><img src="https://img.shields.io/github/forks/iambhvsh/forword?style=flat" alt="shields"></p>
+<p align="center">
+   <img src="https://img.shields.io/github/forks/iambhvsh/forword?style=flat" alt="shields">
+   <img src="https://img.shields.io/github/stars/iambhvsh/forword?style=flat" alt="shields">
+   <img src="https://img.shields.io/github/issues/iambhvsh/forword?style=flat" alt="shields">
+   <img src="https://img.shields.io/badge/status-active-green?style=flat&?link=https%3A%2F%2Fforwordin.vercel.app" alt="shield">
+ </p>
 
 ## 🚀 Demo
 
