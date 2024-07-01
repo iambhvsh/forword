@@ -47,7 +47,7 @@ const App = () => {
       <IonReactRouter>
         <IonTabs>
           <IonRouterOutlet>
-            <Route exact path="/dashboard">
+            <Route exact path="/home">
               <Tab1 />
             </Route>
             <Route exact path="/search">
@@ -57,11 +57,11 @@ const App = () => {
               <Tab3 />
             </Route>
             <Route exact path="/">
-              <Redirect to="/dashboard" />
+              <Redirect to="/" />
             </Route>
           </IonRouterOutlet>
           <IonTabBar slot="bottom">
-            <IonTabButton tab="dashboard" href="/dashboard">
+            <IonTabButton tab="home" href="/home">
               <IonIcon icon={statsChart} />
             </IonTabButton>
             <IonTabButton tab="search" href="/search">
