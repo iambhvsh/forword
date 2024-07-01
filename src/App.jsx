@@ -2,14 +2,14 @@ import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
   IonIcon,
-  IonLabel,
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, heart, search, square, statsChart, statsChartOutline, triangle } from 'ionicons/icons';
+import { heart, search, statsChart } from 'ionicons/icons'; // Only import the used icons
+
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
@@ -38,7 +38,6 @@ import { fetchPopularWords } from './utils';
 const App = () => {
 
   useEffect(() => {
-
     fetchPopularWords();
   }, []);
 
@@ -68,7 +67,7 @@ const App = () => {
               <IonIcon icon={ search } />
             </IonTabButton>
             <IonTabButton tab="favourites" href="/favourites">
-              <IonIcon icon={heart} />
+              <IonIcon icon={ heart } />
             </IonTabButton>
           </IonTabBar>
         </IonTabs>
