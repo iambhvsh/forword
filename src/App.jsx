@@ -11,6 +11,9 @@ import { IonReactRouter } from '@ionic/react-router';
 import { heart, search, statsChart } from 'ionicons/icons';
 import { useEffect } from 'react';
 import { fetchPopularWords, setupIonicReact } from './utils'; // Import setupIonicReact from utils
+import Tab1 from './pages/Tab1'; // Import Tab1 component
+import Tab2 from './pages/Tab2'; // Import Tab2 component
+import Tab3 from './pages/Tab3'; // Import Tab3 component
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
