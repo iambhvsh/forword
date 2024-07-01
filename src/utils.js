@@ -1,8 +1,6 @@
-import { setupIonicReact } from '@ionic/react';
-import { WordStore } from './store';
+import { setupIonicReact } from '@ionic/react'; // Import setupIonicReact from @ionic/react
 
-// Configure Ionic React settings
-export const configureIonicReact = () => {
+export const setupIonicReact = () => {
   setupIonicReact({
     mode: 'ios', // Set the default mode to iOS
     rippleEffect: false, // Disable ripple effects globally
@@ -25,6 +23,3 @@ export const fetchPopularWords = async () => {
     WordStore.update(s => { s.popularWords = [...s.popularWords, wordData[0]] });
   });
 }
-
-// Call the configureIonicReact function to set up Ionic React
-configureIonicReact();
